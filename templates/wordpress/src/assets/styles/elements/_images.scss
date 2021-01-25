@@ -1,0 +1,45 @@
+// =============================================================================
+// ELEMENTS / IMAGES
+// =============================================================================
+
+// Embedded Elements
+
+//
+// 1. Block display is usually what we want
+// 2. Responsive by default
+// 3. Remove strange space-below when inline
+//
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; // [1]
+  max-width: 100%; // [2]
+  vertical-align: middle; // [3]
+}
+
+//
+// Maintain intrinsic aspect ratios when `max-width` is applied
+// (iframe, embed, and object have no intrinsic ratio, set height explicitly)
+//
+
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+
+//
+// There is no good reason elements default to 300px,
+// and audio files are unlikely to come with a width attribute
+//
+
+audio {
+  width: 100%;
+}

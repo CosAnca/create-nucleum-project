@@ -1,0 +1,77 @@
+/* global process */
+const path = require("path");
+const UIengine = require("@uiengine/core");
+const historyApiFallback = require("connect-history-api-fallback");
+
+module.exports = {
+  html: false,
+  images: true,
+  fonts: true,
+  static: true,
+  svgSprite: true,
+  stylesheets: true,
+
+  javascripts: {
+    entry: {
+      // files paths are relative to
+      // javascripts.dest in path-config.json
+      app: ["./app.js"],
+    },
+
+    hot: {
+      enabled: false,
+      reload: false,
+      quiet: true,
+      react: false,
+    },
+  },
+
+  browserSync: {
+    server: {
+      baseDir: "public",
+      extraMiddlewares: [historyApiFallback()],
+    },
+    files: ["src/views/**/*.*", "uiengine/**/*.*"],
+    notify: false,
+    ghostMode: false,
+  },
+
+  production: {
+    rev: false,
+  },
+
+  clean: {
+    patterns: [path.resolve(process.env.INIT_CWD, "public/assets")],
+  },
+
+  additionalTasks: {
+    initialize(gulp, PATH_CONFIG) {
+      // UIengine
+      gulp.task("uiengine", (done) => {
+        const isProduction =
+          global.production !== undefined ? global.production : false;
+
+        const opts = {
+          config: path.resolve(process.env.INIT_CWD, "uiengine.config.js"),
+          watch: !isProduction,
+        };
+
+        UIengine.build(opts)
+          .then(() => {
+            done();
+          })
+          .catch((err) => {
+            done(err);
+          });
+      });
+    },
+    development: {
+      prebuild: ["uiengine"],
+      postbuild: [],
+    },
+    production: {
+      prebuild: ["uiengine"],
+      postbuild: [],
+    },
+  },
+};

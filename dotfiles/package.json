@@ -1,0 +1,47 @@
+{
+  "name": "nucleum-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "yarn nucleum",
+    "build": "yarn nucleum build",
+    "lint:css": "yarn stylelint \"src/assets/styles/**/*.scss\" -s scss",
+    "lint:js": "yarn eslint \"src/assets/js/**/*.js\""
+  },
+  "dependencies": {
+    "nucleum": "file:/Users/cos/Playground/nucleum"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-compat": "^3.8.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.7.1",
+    "stylelint-config-nucleum": "^1.0.1"
+  },
+  "browserslist": [
+    ">0.5%",
+    "not dead",
+    "ie >= 11",
+    "not op_mini all"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/assets/js/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/assets/style/**/*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
+}
