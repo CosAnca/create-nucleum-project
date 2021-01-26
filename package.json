@@ -1,17 +1,9 @@
 {
   "name": "create-nucleum-project",
   "version": "1.0.0",
-  "description": "A CLI to kick-start a Nucleum project",
-  "main": "src/index.js",
-  "bin": "bin/create-project",
-  "files": [
-    "bin/",
-    "dotfiles/",
-    "src/",
-    "templates/"
-  ],
-  "publishConfig": {
-    "access": "public"
+  "description": "A CLI to quickly scaffold a new Nucleum project",
+  "bin": {
+    "create-nucleum-project": "bin/create-nucleum-project.js"
   },
   "keywords": [
     "cli",
@@ -19,6 +11,11 @@
   ],
   "author": "Cos Anca - @Cos_Anca",
   "license": "MIT",
+  "homepage": "https://github.com/CosAnca/create-nucleum-project/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CosAnca/create-nucleum-project.git"
+  },
   "dependencies": {
     "arg": "^5.0.0",
     "chalk": "^4.1.0",

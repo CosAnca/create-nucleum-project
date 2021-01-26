@@ -41,14 +41,14 @@ export async function createProject(options) {
   const fullPathName = new URL(import.meta.url).pathname;
   const templateDir = path.resolve(
     fullPathName.substr(fullPathName.indexOf("/")),
-    "../../templates",
+    "../templates",
     options.template.toLowerCase()
   );
   options.templateDirectory = templateDir;
 
   const dotFilesDir = path.resolve(
     fullPathName.substr(fullPathName.indexOf("/")),
-    "../../dotfiles"
+    "../dotfiles"
   );
   options.dotFilesDirectory = dotFilesDir;
 
