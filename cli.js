@@ -21,7 +21,7 @@ function parseArgumentsIntoOptions(rawArgs) {
     }
   );
   return {
-    template: args["--template"] || "default",
+    template: args["--template"] || false,
     git: args["--git"] || false,
     skipPrompts: args["--yes"] || false,
     help: args["--help"] || false,

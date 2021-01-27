@@ -22,7 +22,7 @@ yarn create nucleum-project my-awesome-website
 
 `create-nucleum-project` comes with the following options:
 
-- `--template | -t` Sets the templtate to be used when generating the project.
+- `--template | -t` Sets the template to be used when generating the project.
 - `--yes | -y` Skips all the prompts and scaffolds a new Nucleum project using the Default template.
 - `--git | -g` Initialises git in your project. Pair it with the `-y` flag to get a "ready for work" new project.
 - `--help | -h` Displays a short documentation of the available options.

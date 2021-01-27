@@ -16,6 +16,16 @@ async function copyTemplateFiles(options) {
   });
 }
 
+async function copyAssetFiles(options) {
+  return copy(
+    options.assetFilesDirectory,
+    path.join(options.targetDirectory, "/src/assets"),
+    {
+      clobber: false,
+    }
+  );
+}
+
 async function copyDotFiles(options) {
   return copy(options.dotFilesDirectory, options.targetDirectory, {
     clobber: false,
@@ -52,6 +62,12 @@ export async function createProject(options) {
   );
   options.dotFilesDirectory = dotFilesDir;
 
+  const assetFilesDir = path.resolve(
+    fullPathName.substr(fullPathName.indexOf("/")),
+    "../assets"
+  );
+  options.assetFilesDirectory = assetFilesDir;
+
   try {
     await access(templateDir, fs.constants.R_OK);
   } catch (err) {
@@ -68,11 +84,15 @@ export async function createProject(options) {
   const tasks = new Listr(
     [
       {
-        title: "Generating project files",
+        title: "Generating template files",
         task: () => copyTemplateFiles(options),
       },
       {
-        title: "Generating dotfiles",
+        title: "Generating asset files",
+        task: () => copyAssetFiles(options),
+      },
+      {
+        title: "Generating dot files",
         task: () => copyDotFiles(options),
       },
       {

@@ -7,18 +7,18 @@
     "nucleum": "file:/Users/cos/Playground/nucleum"
   },
   "devDependencies": {
-    "@uiengine/adapter-ejs": "^3.1.4",
-    "@uiengine/core": "^3.1.4",
+    "@uiengine/adapter-ejs": "^3.1.6",
+    "@uiengine/core": "^3.1.6",
     "connect-history-api-fallback": "^1.6.0",
-    "eslint": "^7.11.0",
-    "eslint-config-prettier": "^6.14.0",
-    "eslint-plugin-compat": "^3.8.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.2",
-    "prettier": "^2.1.2",
-    "stylelint": "^13.7.1",
-    "stylelint-config-nucleum": "^1.0.1"
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "stylelint": "^13.9.0",
+    "stylelint-config-nucleum": "^1.0.2"
   },
   "scripts": {
     "design-system": "yarn uiengine build --serve --watch",

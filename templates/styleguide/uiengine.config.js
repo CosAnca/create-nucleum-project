@@ -38,7 +38,6 @@ module.exports = {
 
   ui: {
     cache: false,
-    customStylesFile: "/assets/css/app-overrides.css",
     lang: "en",
     // hljs: 'atom-one-dark',
     viewports: {

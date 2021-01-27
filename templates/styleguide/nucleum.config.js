@@ -33,6 +33,7 @@ module.exports = {
     },
     files: ["src/views/**/*.*", "uiengine/**/*.*"],
     notify: false,
+    open: false,
     ghostMode: false,
   },
 
@@ -45,7 +46,7 @@ module.exports = {
   },
 
   additionalTasks: {
-    initialize(gulp, PATH_CONFIG) {
+    initialize(gulp) {
       // UIengine
       gulp.task("uiengine", (done) => {
         const isProduction =
