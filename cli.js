@@ -5,23 +5,51 @@ import { createProject } from "./main";
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
     {
+      // Types
+      "--template": String,
       "--git": Boolean,
       "--yes": Boolean,
+      "--help": Boolean,
+      // Aliases
+      "-t": "--template",
       "-g": "--git",
       "-y": "--yes",
+      "-h": "--help",
     },
     {
       argv: rawArgs.slice(2),
     }
   );
   return {
-    skipPrompts: args["--yes"] || false,
+    template: args["--template"] || "default",
     git: args["--git"] || false,
+    skipPrompts: args["--yes"] || false,
+    help: args["--help"] || false,
     targetDirectory: args._[0],
   };
 }
 
 async function promptForMissingOptions(options) {
+  if (options.help) {
+    console.log(`
+      Description
+        Create a new project based on Nucleum's architecture.
+
+      Usage
+        $ yarn create nucleum-project <dir>
+
+      <dir> represents the directory of the Nucleum project.
+      If no directory is provided, the current directory will be used.
+
+      Options
+        --template, -t      Sets the template that should be used (default, styleguide or wordpress)
+        --git, -g           Initialises a git repository within your project directory
+        --yes, -y           Skips all prompts and uses the default template
+        --help, -h          Displays this message
+    `);
+    process.exit(0);
+  }
+
   const defaultTemplate = "default";
 
   if (options.skipPrompts) {

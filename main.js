@@ -55,7 +55,13 @@ export async function createProject(options) {
   try {
     await access(templateDir, fs.constants.R_OK);
   } catch (err) {
-    console.error("%s Invalid template name", chalk.red.bold("ERROR"));
+    console.log();
+    console.error(
+      `${chalk.red.bold(
+        "ERROR"
+      )} Invalid template name. Use either "default", "styleguide" or "wordpress".`
+    );
+    console.log();
     process.exit(1);
   }
 
