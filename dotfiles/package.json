@@ -10,7 +10,7 @@
     "lint:js": "yarn eslint \"src/assets/js/**/*.js\""
   },
   "dependencies": {
-    "nucleum": "file:/Users/cos/Playground/nucleum"
+    "nucleum": "latest"
   },
   "devDependencies": {
     "eslint": "^7.11.0",

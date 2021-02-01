@@ -124,25 +124,45 @@ export async function createProject(options) {
         : " under the current directory."
     }`
   );
-  console.log(
-    `Inside ${
-      options.targetDirectory !== process.cwd() ? "that" : "this"
-    } directory, you can run several commands:`
-  );
-  console.log();
-  console.log(chalk.cyan(`  yarn dev`));
-  console.log("    Starts the development server.");
-  console.log();
-  console.log(chalk.cyan(`  yarn build`));
-  console.log("    Builds the project for production.");
-  console.log();
-  console.log("Get started by typing:");
-  console.log();
-  if (options.targetDirectory !== process.cwd()) {
-    console.log(chalk.cyan("  cd"), options.targetDirectory);
+  if (options.template.toLowerCase() === "wordpress") {
+    console.log();
+    console.log(
+      "To set up a local WordPress instance, run the following commands:"
+    );
+    console.log();
+    console.log(`${chalk.cyan("  docker-compose up -d")}`);
+    console.log(
+      "    Will spin up a docker container prepared for the WordPress installation."
+    );
+    console.log();
+    console.log(
+      `${chalk.cyan("  sh bin/setup.sh")} ${chalk.bold("[macOS or Linux]")}`
+    );
+    console.log(
+      "    Will run an interactive CLI to guide you through the WordPress installation."
+    );
+    console.log();
+  } else {
+    console.log(
+      `Inside ${
+        options.targetDirectory !== process.cwd() ? "that" : "this"
+      } directory, you can run several commands:`
+    );
+    console.log();
+    console.log(chalk.cyan(`  yarn dev`));
+    console.log("    Starts the development server.");
+    console.log();
+    console.log(chalk.cyan(`  yarn build`));
+    console.log("    Builds the project for production.");
+    console.log();
+    console.log("Get started by typing:");
+    console.log();
+    if (options.targetDirectory !== process.cwd()) {
+      console.log(chalk.cyan("  cd"), options.targetDirectory);
+    }
+    console.log(`  ${chalk.cyan(`yarn dev`)}`);
+    console.log();
   }
-  console.log(`  ${chalk.cyan(`yarn dev`)}`);
-  console.log();
 
   return true;
 }

@@ -4,14 +4,21 @@ module.exports = {
     dest: "./public/wp-content/themes/nucleum/assets",
   },
   html: false,
-  images: true,
-  fonts: true,
-  icons: true,
+  images: {
+    dest: "images",
+  },
+  fonts: {
+    dest: "fonts",
+  },
+  icons: {
+    dest: "images",
+  },
   static: {
-    src: "static",
+    src: "assets/static",
     dest: "../",
   },
   stylesheets: {
+    dest: "css",
     purgecss: {
       content: ["public/wp-content/themes/nucleum/**/*.php"],
       extensions: ["php"],
@@ -37,6 +44,7 @@ module.exports = {
   },
 
   javascripts: {
+    dest: "js",
     entry: {
       app: ["./app.js"],
     },

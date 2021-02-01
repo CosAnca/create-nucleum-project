@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "UNLICENSED",
   "dependencies": {
-    "nucleum": "file:/Users/cos/Playground/nucleum"
+    "nucleum": "latest"
   },
   "devDependencies": {
     "@uiengine/adapter-ejs": "^3.1.6",

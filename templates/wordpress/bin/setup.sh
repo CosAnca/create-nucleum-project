@@ -68,8 +68,10 @@ fi
 echo "Do you want to install a custom theme? [Y/n]: \c"
 read CUSTOM_THEME
 if [[ "$CUSTOM_THEME" == Y* ]] || [[ "$CUSTOM_THEME" == y* ]] || [ -z "$CUSTOM_THEME" ]; then
-  echo "Please enter the theme URL or local ZIP path: \c "
+  echo "Please enter the theme URL or local ZIP path: (leave empty to use FosterPress) \c "
+  DEFAULT_THEME="https://github.com/CosAnca/fosterpress/archive/master.zip"
   read CUSTOM_THEME_URL
+  : ${CUSTOM_THEME_URL:=$DEFAULT_THEME}
   echo "Please enter the theme slug: \c"
   read CUSTOM_THEME_SLUG
   # THEME RENAMING VARIABLES
@@ -113,9 +115,11 @@ if [[ "$EMPTY_CONTENT" == Y* ]] || [[ "$EMPTY_CONTENT" == y* ]] || [ -z "$EMPTY_
   docker-compose exec phpfpm su -s /bin/bash www-data -c "wp widget delete search-2 recent-posts-2 recent-comments-2 archives-2 categories-2 meta-2"
 fi
 
-printf "${BRN}========== WordPress setup finished ==========${NC}\n"
-printf "${BLU}Your website is available at: ${PRL}http://localhost${NC}\n"
-printf "${BLU}To enable watch mode and start static assets compilation please first update${NC}\n"
-printf "${BLU}the theme name on the paths inside ${PRL}nucleum.config.js${BLU} file${NC}\n"
-printf "${BLU}and then run: ${PRL}yarn dev${NC}\n"
-printf "${BRN}=============== Happy Coding! ================${NC}\n"
+printf "${BRN}========== WordPress setup finished ==========${NC}\n\n"
+printf "${BLU}Your local WordPress instance is available at: ${PRL}http://localhost${NC}\n\n"
+printf "${BLU}First, make sure the theme name on the paths inside ${PRL}nucleum.config.js${BLU} file${NC}\n"
+printf "${BLU}corresponds to the theme name you choose in this installation proccess.${NC}\n\n"
+printf "${BLU}Then you can use one of the available commands:${NC}\n"
+printf "${BLU}  - run: ${PRL}yarn dev${BLU} to start the development server.${NC}\n"
+printf "${BLU}  - run: ${PRL}yarn build${BLU} to build the project for production.${NC}\n\n"
+printf "${BRN}=============== Happy Coding! ================${NC}\n\n"
