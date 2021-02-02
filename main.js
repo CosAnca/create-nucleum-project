@@ -63,23 +63,23 @@ export async function createProject(options) {
   };
 
   const fullPathName = new URL(import.meta.url).pathname;
-  const templateDir = path.resolve(
-    fullPathName.substr(fullPathName.indexOf("/")),
-    "../templates",
-    options.template.toLowerCase()
-  );
+  const templateDir = path
+    .resolve(
+      fullPathName.substr(fullPathName.indexOf("/")),
+      "../templates",
+      options.template.toLowerCase()
+    )
+    .replace(/^(\w:\\)(\w:\\)/, "$2");
   options.templateDirectory = templateDir;
 
-  const dotFilesDir = path.resolve(
-    fullPathName.substr(fullPathName.indexOf("/")),
-    "../dotfiles"
-  );
+  const dotFilesDir = path
+    .resolve(fullPathName.substr(fullPathName.indexOf("/")), "../dotfiles")
+    .replace(/^(\w:\\)(\w:\\)/, "$2");
   options.dotFilesDirectory = dotFilesDir;
 
-  const assetFilesDir = path.resolve(
-    fullPathName.substr(fullPathName.indexOf("/")),
-    "../assets"
-  );
+  const assetFilesDir = path
+    .resolve(fullPathName.substr(fullPathName.indexOf("/")), "../assets")
+    .replace(/^(\w:\\)(\w:\\)/, "$2");
   options.assetFilesDirectory = assetFilesDir;
 
   try {
