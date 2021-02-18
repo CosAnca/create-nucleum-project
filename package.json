@@ -1,6 +1,6 @@
 {
   "name": "create-nucleum-project",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A CLI to quickly scaffold a new Nucleum project",
   "bin": {
     "create-nucleum-project": "bin/create-nucleum-project.js"
