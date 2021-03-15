@@ -14,7 +14,6 @@ module.exports = {
     dest: "images",
   },
   static: {
-    src: "assets/static",
     dest: "../",
   },
   stylesheets: {
@@ -38,6 +37,8 @@ module.exports = {
   },
 
   production: {
-    rev: false,
+    rev: {
+      manifestDir: "",
+    },
   },
 };

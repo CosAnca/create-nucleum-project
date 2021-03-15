@@ -108,7 +108,7 @@ if [[ "$EMPTY_CONTENT" == Y* ]] || [[ "$EMPTY_CONTENT" == y* ]] || [ -z "$EMPTY_
   # Remove plugins and themes
   printf "${BLU}>>> Removing all plugins and themes...${NC}\n"
   docker-compose exec phpfpm su -s /bin/bash www-data -c "wp plugin delete hello akismet"
-  docker-compose exec phpfpm su -s /bin/bash www-data -c "wp theme delete twentyfifteen twentysixteen twentyseventeen"
+  docker-compose exec phpfpm su -s /bin/bash www-data -c "wp theme delete twentynineteen twentytwenty twentytwentyone"
 
   # Remove widgets
   printf "${BLU}>>> Removing widgets...${NC}\n"

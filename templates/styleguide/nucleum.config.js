@@ -41,10 +41,6 @@ module.exports = {
     rev: false,
   },
 
-  clean: {
-    patterns: [path.resolve(process.env.INIT_CWD, "public/assets")],
-  },
-
   additionalTasks: {
     initialize(gulp) {
       // UIengine
@@ -71,8 +67,8 @@ module.exports = {
       postbuild: [],
     },
     production: {
-      prebuild: ["uiengine"],
-      postbuild: [],
+      prebuild: [],
+      postbuild: ["uiengine"],
     },
   },
 };

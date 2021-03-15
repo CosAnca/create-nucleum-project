@@ -134,13 +134,13 @@ function get_asset_path( $filename ) {
 Once you have this snippet included into your `functions.php` file, you can reference the assets filenames in your `.php` files, in one of the following ways:
 
 ```php
-wp_enqueue_style( "cache-bust-style", get_template_directory_uri() . get_asset_path("style/style.css"), array(), null, false );
+wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . get_asset_path('css/styles.css'), array(), null, false );
 ```
 
 or
 
 ```php
-echo get_template_directory_uri() . get_asset_path("img/filename.jpg")
+echo get_template_directory_uri() . get_asset_path("images/filename.ext")
 ```
 
 ### Windows Support
