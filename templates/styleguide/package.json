@@ -14,8 +14,8 @@
     "nucleum": "latest"
   },
   "devDependencies": {
-    "@uiengine/adapter-ejs": "^3.1.7",
-    "@uiengine/core": "^3.1.7",
+    "@uiengine/adapter-ejs": "^3.1.8",
+    "@uiengine/core": "^3.1.8",
     "connect-history-api-fallback": "^1.6.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
