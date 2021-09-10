@@ -1,3 +1,4 @@
 {
-  "extends": "stylelint-config-nucleum"
+  "extends": ["stylelint-config-nucleum", "stylelint-config-prettier"],
+  "ignoreFiles": ["src/assets/icons/*.svg"]
 }

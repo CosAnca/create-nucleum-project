@@ -25,10 +25,22 @@ module.exports = {
   // Adapters are used for templating/rendering. Each adapter is a module that gets required
   // and needs to provide functions for setup and rendering. For details see the adapters docs.
   adapters: {
-    ejs: {
-      module: "@uiengine/adapter-ejs",
+    njk: {
+      module: "@uiengine/adapter-nunjucks",
       options: {
-        root: path.resolve(process.env.INIT_CWD, "src/views/components"),
+        trimBlocks: true,
+        lstripBlocks: true,
+        noCache: true,
+        globals: {
+          time: () => {
+            return new Date().getTime();
+          },
+        },
+        filters: {
+          shorten: (str, count) => {
+            return str.slice(0, count || 5);
+          },
+        },
       },
     },
   },

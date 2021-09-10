@@ -25,7 +25,7 @@ A variant needs at least a file to render.
 You create a variant by adding a file renderable by one of the configured adapters to the `variants` directory of a component.
 
 To render a variant, we also need a layout.
-The project includes a basic ejs layout file in `src/views/templates/uiengine.ejs`.
+The project includes a basic Nunjucks layout file in `src/views/templates/uiengine.njk`.
 It includes the `<!-- uiengine:content -->` comment, which will be replaced with the HTML of the rendered variant.
 You can go ahead and extend the layout to fit your needs and include the correct HTML and style and script references.
 
