@@ -1,4 +1,10 @@
 {
+  "overrides": [
+    {
+      "files": ["**/*.scss"],
+      "customSyntax": "postcss-scss"
+    }
+  ],
   "extends": ["stylelint-config-nucleum", "stylelint-config-prettier"],
   "ignoreFiles": ["src/assets/icons/*.svg"]
 }

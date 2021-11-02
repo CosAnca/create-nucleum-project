@@ -13,16 +13,17 @@
     "nucleum": "latest"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-compat": "^3.13.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.0",
-    "stylelint": "^13.13.1",
-    "stylelint-config-nucleum": "^1.0.4",
-    "stylelint-config-prettier": "^8.0.2"
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "postcss-scss": "^4.0.2",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.0.1",
+    "stylelint-config-nucleum": "^2.2.2",
+    "stylelint-config-prettier": "^9.0.3"
   },
   "browserslist": [
     ">0.6%",
