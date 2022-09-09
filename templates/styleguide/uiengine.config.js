@@ -28,6 +28,7 @@ module.exports = {
     njk: {
       module: "@uiengine/adapter-nunjucks",
       options: {
+        searchPaths: [path.resolve(process.env.INIT_CWD, "./src/views")],
         trimBlocks: true,
         lstripBlocks: true,
         noCache: true,
@@ -46,7 +47,7 @@ module.exports = {
   },
 
   // Here you can configure the template that the variant preview gets embeded in.
-  template: "uiengine.ejs",
+  template: "uiengine.njk",
 
   ui: {
     cache: false,

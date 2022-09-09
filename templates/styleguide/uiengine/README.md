@@ -4,6 +4,27 @@ Hey! It looks like you have just set up this project.
 Here are some first tips to get started.
 Feel free to replace these hints with the actual content for your homepage once you got going.
 
+## How to create a page?
+
+To generate the basic files and folders of a page you can use the `page` command:
+
+```bash
+yarn uiengine page PAGE_NAME
+```
+
+This generate a `README.md` and a `page.config.js` file inside the folder matching the page id in your pages source directory.
+In case you want to directly add some pages, you can list them like so:
+
+```bash
+yarn uiengine page PAGE_1_NAME PAGE_2_NAME PAGE_3_NAME
+```
+
+Say you would like to create pages for grouping your components with the [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/):
+
+```bash
+yarn uiengine page atoms molecules organisms templates pages
+```
+
 ## How to create a component?
 
 To generate the basic files of a component you can use the `component` command:
@@ -31,24 +52,3 @@ You can go ahead and extend the layout to fit your needs and include the correct
 
 This layout file is just there to get you started.
 Feel free to change its content and use any other adapter to fit your projects needs.
-
-## How to create a page?
-
-To generate the basic files and folders of a page you can use the `page` command:
-
-```bash
-yarn uiengine page PAGE_NAME
-```
-
-This generate a `README.md` and a `page.config.js` file inside the folder matching the page id in you pages source directory.
-In case you want to directly add some pages, you can list them like so:
-
-```bash
-yarn uiengine page PAGE_1_NAME PAGE_2_NAME PAGE_3_NAME
-```
-
-Say you would like to create pages for grouping your components with the [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/):
-
-```bash
-yarn uiengine page atoms molecules organisms templates pages
-```

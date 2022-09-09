@@ -8,8 +8,10 @@
 // The global spacing configuration is based as a
 // quarter of the global font size
 
+// Base spacing value
 $spacing-base: 0.25rem !default;
 
+// Spacing values based on the base spacing value
 $spacing-1: $spacing-base !default;
 $spacing-2: $spacing-base * 2 !default;
 $spacing-3: $spacing-base * 3 !default;

@@ -5,11 +5,13 @@
 $border-width-base: 1px !default;
 $border-radius-base: 0.25rem !default;
 
+// Border width map
 $border-width: (
   "none": 0,
   "base": $border-width-base,
 ) !default;
 
+// Border radius map
 $border-radius: (
   "none": 0,
   "sm": 0.2rem,
