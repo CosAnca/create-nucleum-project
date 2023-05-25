@@ -26,13 +26,13 @@ $gap-directions: (
       $size-number: tools.str-replace($size, "spacing-", "");
       $rem-value: null;
 
-      @if ($value == 0) {
+      @if $value == 0 {
         $rem-value: 0;
       } @else {
         $rem-value: tools.rem($value);
       }
 
-      @if ($direction != null) {
+      @if $direction {
         .u-g#{$direction-alias}-#{$size-number}#{$breakpoint} {
           #{$direction}-gap: $rem-value !important;
         }
